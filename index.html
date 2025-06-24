@@ -11,6 +11,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html{
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -51,6 +54,9 @@
 
         .logo i {
             font-size: 1.5rem;
+        }
+        .logo img {
+            width: 10rem;
         }
 
         .nav {
@@ -100,6 +106,59 @@
         .mobile-nav a {
             padding: 0.75rem 0;
             border-bottom: 1px solid #f3f4f6;
+        }
+
+        /* Logo Section */
+        .logos-section {
+            background: #fff;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logos-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .logo-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            padding: 0.5rem;
+            border: 2px solid #e5e7eb;
+            transition: border-color 0.3s ease;
+        }
+
+        .logo-item:hover .logo-image {
+            border-color: #1e40af;
+        }
+
+        .logo-text {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #374151;
+            margin-top: 0.5rem;
         }
 
         /* Hero */
@@ -384,6 +443,20 @@
                 display: block;
             }
 
+            .logos-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .logo-image {
+                width: 70px;
+                height: 70px;
+            }
+
+            .logo-text {
+                font-size: 0.8rem;
+            }
+
             .hero {
                 padding: 2rem 0;
             }
@@ -425,6 +498,28 @@
                 padding: 0 0.5rem;
             }
 
+            .logos-section {
+                padding: 1.5rem 0;
+            }
+
+            .logos-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .logo-item {
+                padding: 0.5rem;
+            }
+
+            .logo-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .logo-text {
+                font-size: 0.75rem;
+            }
+
             .hero h1 {
                 font-size: 1.5rem;
             }
@@ -441,6 +536,13 @@
                 padding: 0.75rem;
             }
         }
+
+        @media (max-width: 320px) {
+            .logos-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -450,8 +552,9 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-university"></i>
-                    <span>MLR Institute of Technology</span>
+                    <!-- <i class="fas fa-university"></i> -->
+                    <img src="mlrit-logo-1.jpg" alt="">
+                    <!-- <span>MLR Institute of Technology</span> -->
                 </div>
                 
                 <div class="mobile-toggle" onclick="toggleMobileMenu()">
@@ -478,6 +581,30 @@
             </div>
         </div>
     </header>
+
+    <!-- Logos Section -->
+    <section class="logos-section">
+        <div class="container">
+            <div class="logos-container">
+                <!-- <div class="logo-item">
+                    <img src="mlrit-logo-1.jpg" alt="AICTE Logo" class="logo-image">
+                    <span class="logo-text">Approved by AICTE</span>
+                </div> -->
+                <div class="logo-item">
+                    <img src="csi.png" alt="CSI Logo" class="logo-image">
+                    <span>Computer Society of India</span>
+                </div>
+                <div class="logo-item">
+                    <img src="iic.png" alt="IIC Logo" class="logo-image">
+                    <span>Institution's Innovation Council</span>
+                </div>
+                <div class="logo-item">
+                    <img src="code.png" alt="Code Club Logo" class="logo-image">
+                    <span>Clique Of Digital Explorers</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -575,7 +702,11 @@
                 </div>
                 <div class="committee-card">
                     <h4>Director</h4>
-                    <p>Ms. Marri Shreya Reddy</p>
+                    <p>Mr. Marri Dhiren Reddy</p>
+                </div>
+                <div class="committee-card">
+                    <h4>Director</h4>
+                    <p>Mrs. Marri Shreya Reddy</p>
                 </div>
             </div>
 
@@ -596,7 +727,7 @@
 
             <h3 style="text-align: center; color: #1e40af; margin-bottom: 1.5rem;">Faculty Co-Coordinators</h3>
             <div class="grid grid-3">
-                <div class="committee-card"><p><strong>Dr. N. Shirisha</strong><br>Associate Professor - CSE</p></div>
+                <div class="committee-card"><p><strong>Dr. K. Pushpa Rani</strong><br>Associate Professor - CSE</p></div>
                 <div class="committee-card"><p><strong>Dr. K. Venkata Subbaiah</strong><br>Professor - CSE</p></div>
                 <div class="committee-card"><p><strong>Dr. D.B.K. Kamesh</strong><br>Professor - CSE</p></div>
                 <div class="committee-card"><p><strong>Dr. K. Chinnaiah</strong><br>Professor - CSE</p></div>
@@ -690,7 +821,7 @@
                 <a href="https://rzp.io/rzp/R332EN2Z" class="btn btn-primary" style="background-color: #dc2626; color: #fff;">Register Now</a>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://the-zer0.github.io/PDF_Download/" class="btn btn-primary" style="background-color: #1e40af; color: #fff;">Download Brochure</a>
+                <a href="" class="btn btn-primary" style="background-color: #1e40af; color: #fff;">Download Brochure</a>
             </div>
         </div>
     </section>
